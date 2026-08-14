@@ -9,7 +9,8 @@
     "dev:bot": "node src/index.mjs",
     "start": "node server.mjs",
     "start:bot": "node src/index.mjs",
-    "check": "node --check app.js && node --check server.mjs && find src -name '*.mjs' -print0 | xargs -0 -n1 node --check"
+    "package:teams": "node scripts/build-teams-package.mjs",
+    "check": "node --check app.js && node --check server.mjs && find src scripts -name '*.mjs' -print0 | xargs -0 -n1 node --check"
   },
   "dependencies": {
     "botbuilder": "^4.23.3"

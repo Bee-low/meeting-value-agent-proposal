@@ -15,6 +15,7 @@ View the proposal at <https://bee-low.github.io/meeting-value-agent-proposal/>.
 - `teams/`: Teams app manifest template and packaging notes
 - `adaptiveCards/`: Adaptive Card template for the meeting value summary
 - `docs/implementation-plan.md`: implementation steps for the automated Teams agent
+- `docs/teams-setup.md`: setup guide for creating the Teams app package and uploading it
 - `server.mjs`: tiny static server using Node built-ins only
 - `package.json`: run scripts
 - `CONTRIBUTING.md`: guidance for feedback and pull requests
@@ -55,6 +56,14 @@ Endpoints:
 - `POST /api/messages`: Bot Framework messaging endpoint for Azure Bot / Teams
 
 See `docs/implementation-plan.md` and `teams/README.md` for tenant setup, manifest packaging, Graph integration, and deployment steps.
+
+Build an uploadable Teams app package after `.env` is configured:
+
+```bash
+npm run package:teams
+```
+
+See `docs/teams-setup.md` for the full Teams setup sequence.
 
 ## Proposal focus
 
