@@ -105,7 +105,6 @@ MicrosoftAppId=<bot-client-id>
 MicrosoftAppPassword=<bot-secret>
 MicrosoftAppTenantId=<tenant-id>
 BOT_ID=<bot-client-id>
-AAD_APP_CLIENT_ID=<bot-client-id>
 PUBLIC_APP_URL=https://<public-host>
 PUBLIC_APP_DOMAIN=<public-host-without-https>
 ```
@@ -127,6 +126,8 @@ This creates:
 ```text
 dist/meeting-value-agent-teams.zip
 ```
+
+If you are only testing import into Developer Portal before Azure Bot creation, the package builder can generate temporary app and bot IDs. The package will import, but the bot will not respond in Teams until the manifest bot ID matches a real Azure Bot / Entra app registration.
 
 ## 7. Upload To Teams
 

@@ -17,14 +17,13 @@ const env = {
 const publicAppUrl = normalizePublicUrl(env.PUBLIC_APP_URL);
 const replacements = {
   TEAMS_APP_ID: env.TEAMS_APP_ID || randomUUID(),
-  BOT_ID: env.BOT_ID || env.MicrosoftAppId || env.AAD_APP_CLIENT_ID || '',
-  AAD_APP_CLIENT_ID: env.AAD_APP_CLIENT_ID || env.MicrosoftAppId || env.BOT_ID || '',
+  BOT_ID: env.BOT_ID || env.MicrosoftAppId || randomUUID(),
   PUBLIC_APP_URL: publicAppUrl,
   PUBLIC_APP_DOMAIN: env.PUBLIC_APP_DOMAIN || new URL(publicAppUrl).hostname,
 };
 
 const missing = Object.entries(replacements)
-  .filter(([key, value]) => key !== 'TEAMS_APP_ID' && !value)
+  .filter(([, value]) => !value)
   .map(([key]) => key);
 
 if (missing.length > 0) {
@@ -53,6 +52,7 @@ execFileSync('zip', ['-r', packagePath, 'manifest.json', 'color.png', 'outline.p
 });
 
 console.log(`Teams app ID: ${replacements.TEAMS_APP_ID}`);
+console.log(`Bot ID: ${replacements.BOT_ID}`);
 console.log(`Teams package: ${packagePath}`);
 
 function normalizePublicUrl(value) {
