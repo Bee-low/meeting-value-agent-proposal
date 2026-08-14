@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teams Meeting Value Agent Proposal</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Proposal</p>
+          <h1>Teams Meeting Value Agent</h1>
+          <p class="lede">
+            A Microsoft Teams agent that helps managers challenge whether a meeting was worth the time invested by comparing role-based cost against agendas, outcomes, decisions, and allocated actions.
+          </p>
+          <div class="hero-actions" aria-label="Proposal highlights">
+            <span>Role-based estimates</span>
+            <span>Outcome scoring</span>
+            <span>Action accountability</span>
+          </div>
+        </div>
+
+        <aside class="summary-card" aria-label="Example meeting value summary">
+          <p class="card-kicker">End-of-meeting summary</p>
+          <strong>$740</strong>
+          <span>estimated role-based cost</span>
+          <dl>
+            <div>
+              <dt>Value signal</dt>
+              <dd>Medium</dd>
+            </div>
+            <div>
+              <dt>Agenda</dt>
+              <dd>3 of 4 covered</dd>
+            </div>
+            <div>
+              <dt>Actions</dt>
+              <dd>6 found, 5 owned</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="proposal-grid" aria-label="Proposal details">
+        <article class="panel case-card wide">
+          <p class="eyebrow">Manager Problem</p>
+          <h2>Meetings consume time without always proving value.</h2>
+          <p>
+            Managers need a lightweight way to see whether meetings had a clear purpose, covered the agenda, reached useful outcomes, and assigned accountable follow-up actions. The agent is not designed for payroll accuracy; it uses broad role types to make the cost visible enough to prompt better meeting discipline.
+          </p>
+        </article>
+
+        <article class="panel case-card">
+          <p class="eyebrow">Before</p>
+          <h2>Pre-meeting challenge</h2>
+          <p>
+            Checks the invite for an agenda, expected outcomes, required attendees, and estimated role-based cost. If the meeting is expensive and unclear, it prompts the organiser to tighten the purpose before people join.
+          </p>
+        </article>
+
+        <article class="panel case-card">
+          <p class="eyebrow">After</p>
+          <h2>Value assessment</h2>
+          <p>
+            Reviews attendance, transcript, chat, and recap content to identify decisions, unresolved issues, action owners, and missing due dates. It then returns a practical value signal for the manager.
+          </p>
+        </article>
+      </section>
+
+      <section class="workflow" aria-label="Agent workflow">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow</p>
+          <h2>How the agent helps managers assess meetings</h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h3>Estimate cost by role</h3>
+            <p>Uses admin-configured rates for executives, directors, managers, specialists, contributors, contractors, and external attendees.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Check meeting intent</h3>
+            <p>Scores whether the invite has a purpose, agenda, decision target, and expected outcomes.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Assess outcomes</h3>
+            <p>Extracts decisions, resolved topics, unresolved questions, and evidence that planned outcomes were met.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Allocate actions</h3>
+            <p>Flags action items without owners or due dates, then lets the manager send tasks to Planner, To Do, or Jira.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="estimator panel" aria-label="Interactive meeting value estimator">
+        <div>
+          <p class="eyebrow">MVP Demo</p>
+          <h2>Meeting value estimator</h2>
+          <p>
+            Adjust a sample meeting to show how the agent frames cost against meeting value rather than chasing exact salary data.
+          </p>
+        </div>
+
+        <form id="meeting-form" class="estimator-form">
+          <label>
+            Duration in minutes
+            <input name="duration" type="number" min="15" max="240" step="15" value="60" />
+          </label>
+          <label>
+            Executives
+            <input name="executive" type="number" min="0" max="20" value="1" />
+          </label>
+          <label>
+            Managers
+            <input name="manager" type="number" min="0" max="30" value="3" />
+          </label>
+          <label>
+            Specialists / ICs
+            <input name="contributor" type="number" min="0" max="60" value="6" />
+          </label>
+          <label>
+            Agenda items covered
+            <input name="agendaCovered" type="number" min="0" max="10" value="3" />
+          </label>
+          <label>
+            Planned outcomes met
+            <input name="outcomesMet" type="number" min="0" max="10" value="2" />
+          </label>
+          <label>
+            Actions with owners
+            <input name="ownedActions" type="number" min="0" max="20" value="5" />
+          </label>
+          <label>
+            Actions with due dates
+            <input name="datedActions" type="number" min="0" max="20" value="3" />
+          </label>
+        </form>
+
+        <aside class="result-card" aria-live="polite">
+          <p class="card-kicker">Estimated summary</p>
+          <strong id="estimated-cost">$0</strong>
+          <span id="value-signal">Value signal: Medium</span>
+          <div class="score-meter" aria-hidden="true">
+            <div id="score-fill"></div>
+          </div>
+          <p id="challenge-copy"></p>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+:root {
+  --bg: #f6f5ef;
+  --paper: #fffdf6;
+  --ink: #171a1c;
+  --muted: #5e666c;
+  --line: rgba(23, 26, 28, 0.12);
+  --teal: #087f7a;
+  --teal-dark: #075c5a;
+  --coral: #d25a3c;
+  --gold: #d59b2d;
+  --blue: #365f91;
+  --shadow: 0 22px 70px rgba(21, 35, 39, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Avenir Next, Avenir, "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(8, 127, 122, 0.14) 0 25%, transparent 25% 100%),
+    linear-gradient(315deg, rgba(210, 90, 60, 0.14) 0 18%, transparent 18% 100%),
+    linear-gradient(180deg, var(--bg) 0%, #e9efe8 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(23, 26, 28, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 26, 28, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 34px 0 52px;
+}
+
+.panel {
+  background: rgba(255, 253, 246, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 28px;
+  align-items: end;
+  border-radius: 8px;
+  padding: 34px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(23, 26, 28, 0.76), rgba(23, 26, 28, 0.1)),
+    url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80") center / cover;
+  color: #fffdf6;
+  box-shadow: var(--shadow);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 46%;
+  background: linear-gradient(0deg, rgba(23, 26, 28, 0.52), transparent);
+  pointer-events: none;
+}
+
+.hero-copy,
+.summary-card {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow,
+.card-kicker {
+  margin: 0;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: currentColor;
+  opacity: 0.7;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 11ch;
+  margin: 12px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 8vw, 6.9rem);
+  line-height: 0.88;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: clamp(1.45rem, 3vw, 2.3rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.lede {
+  max-width: 58ch;
+  margin-bottom: 24px;
+  font-size: 1.14rem;
+  line-height: 1.55;
+  color: rgba(255, 253, 246, 0.86);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-actions span {
+  border: 1px solid rgba(255, 253, 246, 0.35);
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(255, 253, 246, 0.1);
+  backdrop-filter: blur(8px);
+  font-size: 0.94rem;
+}
+
+.summary-card,
+.result-card {
+  border-radius: 8px;
+  padding: 22px;
+  background: rgba(255, 253, 246, 0.92);
+  color: var(--ink);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+.summary-card strong,
+.result-card strong {
+  display: block;
+  margin: 14px 0 2px;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 1;
+}
+
+.summary-card > span,
+.result-card > span {
+  color: var(--muted);
+}
+
+.summary-card dl {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 0;
+}
+
+.summary-card dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+dt,
+dd {
+  margin: 0;
+}
+
+dt {
+  color: var(--muted);
+}
+
+.proposal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.case-card,
+.workflow,
+.estimator {
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.case-card.wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.case-card p,
+.workflow p,
+.estimator p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.workflow {
+  margin-top: 18px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.steps article {
+  min-height: 230px;
+  display: grid;
+  align-content: space-between;
+  border: 1px solid rgba(255, 253, 246, 0.18);
+  border-radius: 8px;
+  padding: 18px;
+  background: rgba(255, 253, 246, 0.06);
+}
+
+.steps span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.estimator {
+  display: grid;
+  grid-template-columns: 0.8fr 1.25fr 0.8fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.estimator-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ink);
+}
+
+input:focus {
+  outline: 2px solid rgba(8, 127, 122, 0.36);
+  outline-offset: 2px;
+}
+
+.result-card {
+  background: var(--teal-dark);
+  color: var(--paper);
+  box-shadow: none;
+}
+
+.result-card > span,
+.result-card p {
+  color: rgba(255, 253, 246, 0.78);
+}
+
+.score-meter {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  margin: 20px 0;
+  background: rgba(255, 253, 246, 0.18);
+}
+
+.score-meter div {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--coral), var(--gold), #8ac47d);
+  transition: width 180ms ease;
+}
+
+@media (max-width: 920px) {
+  .hero,
+  .proposal-grid,
+  .case-card.wide,
+  .estimator,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    align-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 20px;
+  }
+
+  .hero,
+  .case-card,
+  .workflow,
+  .estimator {
+    padding: 20px;
+  }
+
+  .estimator-form {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    max-width: none;
+  }
+}

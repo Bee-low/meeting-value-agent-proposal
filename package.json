@@ -1,0 +1,10 @@
+{
+  "name": "teams-meeting-value-agent-proposal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proposal page for a Microsoft Teams meeting value assessment agent.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  }
+}
