@@ -2,9 +2,16 @@
   "name": "bupa-meeting-value-agent-proposal",
   "version": "0.1.0",
   "private": true,
-  "description": "Bupa-branded proposal page for a Microsoft Teams meeting value assessment agent.",
+  "description": "Bupa-branded proposal page and Microsoft Teams bot scaffold for a meeting value assessment agent.",
   "scripts": {
     "dev": "node server.mjs",
-    "start": "node server.mjs"
+    "dev:site": "node server.mjs",
+    "dev:bot": "node src/index.mjs",
+    "start": "node server.mjs",
+    "start:bot": "node src/index.mjs",
+    "check": "node --check app.js && node --check server.mjs && find src -name '*.mjs' -print0 | xargs -0 -n1 node --check"
+  },
+  "dependencies": {
+    "botbuilder": "^4.23.3"
   }
 }

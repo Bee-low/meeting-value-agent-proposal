@@ -1,0 +1,28 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Bupa Meeting Value Summary",
+      "weight": "Bolder",
+      "size": "Large",
+      "color": "Accent",
+      "wrap": true
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        { "title": "Estimated cost", "value": "A$1,150" },
+        { "title": "Value signal", "value": "High (74/100)" },
+        { "title": "Agenda", "value": "3 of 4 covered" },
+        { "title": "Actions", "value": "6 found, 5 owned" }
+      ]
+    }
+  ],
+  "actions": [
+    { "type": "Action.Submit", "title": "Create tasks", "data": { "action": "createTasks" } },
+    { "type": "Action.Submit", "title": "Post to chat", "data": { "action": "postSummary" } }
+  ]
+}

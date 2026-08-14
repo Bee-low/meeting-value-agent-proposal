@@ -1,6 +1,6 @@
 # Bupa Meeting Value Agent Proposal
 
-A lightweight Bupa-branded proposal page for a Microsoft Teams agent that helps managers assess whether meetings justify the time they consume.
+A lightweight Bupa-branded proposal page and starter Microsoft Teams bot scaffold for an agent that helps managers assess whether meetings justify the time they consume.
 
 The proposal is intended to invite feedback from managers, product stakeholders, and technical collaborators before building a full Microsoft Teams app.
 
@@ -11,6 +11,10 @@ View the proposal at <https://bee-low.github.io/meeting-value-agent-proposal/>.
 ## What is here
 
 - `index.html`, `styles.css`, `app.js`: Bupa-branded proposal page and interactive role-based value estimator
+- `src/`: starter Teams bot/backend scaffold
+- `teams/`: Teams app manifest template and packaging notes
+- `adaptiveCards/`: Adaptive Card template for the meeting value summary
+- `docs/implementation-plan.md`: implementation steps for the automated Teams agent
 - `server.mjs`: tiny static server using Node built-ins only
 - `package.json`: run scripts
 - `CONTRIBUTING.md`: guidance for feedback and pull requests
@@ -29,6 +33,28 @@ npm run dev
 ```
 
 Then open `http://localhost:4173`.
+
+## Run the Teams bot scaffold
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the bot backend:
+
+```bash
+npm run dev:bot
+```
+
+Endpoints:
+
+- `GET /health`: service health check
+- `GET /api/assessments/demo`: sample meeting value assessment payload
+- `POST /api/messages`: Bot Framework messaging endpoint for Azure Bot / Teams
+
+See `docs/implementation-plan.md` and `teams/README.md` for tenant setup, manifest packaging, Graph integration, and deployment steps.
 
 ## Proposal focus
 
