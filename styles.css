@@ -356,6 +356,15 @@ dt {
   color: var(--paper);
 }
 
+.workflow p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.workflow .eyebrow {
+  color: var(--bupa-aqua);
+  opacity: 1;
+}
+
 .section-heading {
   max-width: 760px;
   margin-bottom: 24px;
@@ -476,6 +485,20 @@ input:focus {
   .shell {
     width: min(100% - 20px, 1180px);
     padding-top: 20px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar-brand {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
   }
 
   .hero,
