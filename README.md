@@ -16,6 +16,10 @@ View the proposal at <https://bee-low.github.io/meeting-value-agent-proposal/>.
 - `CONTRIBUTING.md`: guidance for feedback and pull requests
 - `.github/`: issue and pull request templates
 
+## Logo asset
+
+The local Bupa SVG logo is stored at `assets/bupa-logo.svg` and was sourced from the public Bupa homepage asset path: `https://www.bupa.com/~/media/images/b/bupa-v5/logo/bupa-logo.svg`.
+
 ## Run it
 
 Open `index.html` directly in a browser, or run the local server:
