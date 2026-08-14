@@ -16,6 +16,7 @@ View the proposal at <https://bee-low.github.io/meeting-value-agent-proposal/>.
 - `adaptiveCards/`: Adaptive Card template for the meeting value summary
 - `docs/implementation-plan.md`: implementation steps for the automated Teams agent
 - `docs/teams-setup.md`: setup guide for creating the Teams app package and uploading it
+- `docs/personal-teams-test.md`: safe path for testing in your own Microsoft 365 developer tenant
 - `server.mjs`: tiny static server using Node built-ins only
 - `package.json`: run scripts
 - `CONTRIBUTING.md`: guidance for feedback and pull requests
@@ -64,6 +65,8 @@ npm run package:teams
 ```
 
 See `docs/teams-setup.md` for the full Teams setup sequence.
+
+To test outside Bupa tenant permissions, use `docs/personal-teams-test.md`.
 
 ## Proposal focus
 
