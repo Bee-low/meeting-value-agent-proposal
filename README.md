@@ -4,6 +4,10 @@ A lightweight proposal page for a Microsoft Teams agent that helps managers asse
 
 The proposal is intended to invite feedback from managers, product stakeholders, and technical collaborators before building a full Microsoft Teams app.
 
+## Preview
+
+View the proposal at <https://bee-low.github.io/meeting-value-agent-proposal/>.
+
 ## What is here
 
 - `index.html`, `styles.css`, `app.js`: proposal page and interactive role-based value estimator
