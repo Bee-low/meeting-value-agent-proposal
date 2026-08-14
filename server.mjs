@@ -16,7 +16,8 @@ const contentTypes = {
 };
 
 const server = createServer(async (request, response) => {
-  const requestPath = request.url === '/' ? '/index.html' : request.url || '/index.html';
+  const url = new URL(request.url || '/index.html', `http://${request.headers.host || host}`);
+  const requestPath = url.pathname === '/' ? '/index.html' : url.pathname;
   const safePath = normalize(requestPath).replace(/^([.][.][/\\])+/, '');
   const filePath = join(root, safePath);
 
