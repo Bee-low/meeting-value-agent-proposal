@@ -41,15 +41,15 @@ function calculateSummary() {
 
   if (score >= 72) {
     signal = 'High';
-    challenge = 'The meeting appears to justify its time cost. Use the captured actions to protect follow-through.';
+    challenge = 'The meeting appears to justify its time cost. Use the captured actions to protect follow-through for Bupa colleagues and customers.';
   } else if (score >= 45) {
     signal = 'Medium';
-    challenge = 'Some value was created, but the manager should tighten outcomes, ownership, or due dates next time.';
+    challenge = 'Some value was created, but the manager should tighten outcomes, ownership, or due dates before repeating this meeting.';
   }
 
   estimatedCost.textContent = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'AUD',
     maximumFractionDigits: 0,
   }).format(cost);
   valueSignal.textContent = `Value signal: ${signal} (${score}/100)`;

@@ -1,6 +1,6 @@
-# Teams Meeting Value Agent Proposal
+# Bupa Meeting Value Agent Proposal
 
-A lightweight proposal page for a Microsoft Teams agent that helps managers assess whether meetings justify the time they consume.
+A lightweight Bupa-branded proposal page for a Microsoft Teams agent that helps managers assess whether meetings justify the time they consume.
 
 The proposal is intended to invite feedback from managers, product stakeholders, and technical collaborators before building a full Microsoft Teams app.
 
@@ -10,7 +10,7 @@ View the proposal at <https://bee-low.github.io/meeting-value-agent-proposal/>.
 
 ## What is here
 
-- `index.html`, `styles.css`, `app.js`: proposal page and interactive role-based value estimator
+- `index.html`, `styles.css`, `app.js`: Bupa-branded proposal page and interactive role-based value estimator
 - `server.mjs`: tiny static server using Node built-ins only
 - `package.json`: run scripts
 - `CONTRIBUTING.md`: guidance for feedback and pull requests
